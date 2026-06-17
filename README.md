@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 浮云阁官网
 
-## Getting Started
+这是一个基于 `Next.js 16` 和 `Tailwind CSS 4` 的单页官网项目，用来展示“浮云阁”的企业官网 / 展示页制作服务。
 
-First, run the development server:
+## 本地运行
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+浏览器打开 `http://localhost:3000`。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 已完成内容
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 首页首屏展示
+- 服务内容区块
+- 适合行业区块
+- 制作流程区块
+- 案例展示区块
+- 联系方式和底部 CTA
 
-## Learn More
+## 主要文件
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/page.tsx`：页面结构和主要文案
+- `src/app/globals.css`：全局样式和首页视觉效果
+- `src/app/layout.tsx`：页面元信息
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 当前联系信息
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 邮箱：`xiaosuzi1987@gmail.com`
+- 微信：`suxiaojian0828`
+- 电话：`18035638273`
+- 抖音：`29919058295`
 
-## Deploy on Vercel
+## 修改方式
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+如果要改文案、品牌名、联系方式，优先修改 `src/app/page.tsx` 顶部的内容配置。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+如果要改视觉样式、颜色、阴影、设备展示效果，修改 `src/app/globals.css`。
+
+## 部署到 Vercel
+
+最简单的部署流程：
+
+1. 把项目推到 GitHub
+2. 打开 [Vercel](https://vercel.com)
+3. 导入这个 GitHub 仓库
+4. Framework Preset 选择 `Next.js`
+5. 点击 `Deploy`
+
+部署完成后，Vercel 会自动给你一个可访问的网址。
+
+如果后面买了域名，可以在 Vercel 项目里绑定自定义域名。
