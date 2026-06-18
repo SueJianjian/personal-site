@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Service = {
   title: string;
   description: string[];
@@ -18,6 +20,7 @@ type Step = {
 
 type CaseItem = {
   title: string;
+  audience: string;
   summary: string;
   tags: string[];
   tone: string;
@@ -46,26 +49,16 @@ const siteContent = {
   },
   summary: {
     title: "适合想尽快上线、先把官网做出来的客户",
-    text: "如果你需要一个干净、专业、能展示业务并接住咨询的官网，这种方案会更适合你。先把门面搭起来，后面再逐步补内容和案例。",
+    text: "如果你需要一个干净、专业、能展示业务并接住咨询的官网，这种方式会更适合。先把页面做出来上线，再根据实际需求逐步补案例、文章和细节内容。",
   },
   contact: {
-    title: "联系方式",
+    title: "直接联系我",
     lead: "想做企业官网、展示页或服务介绍页，可以直接加我微信、发邮件，或者把参考网站发给我。",
     email: "xiaosuzi1987@gmail.com",
     contacts: [
-      {
-        label: "微信",
-        value: "suxiaojian0828",
-      },
-      {
-        label: "电话",
-        value: "18035638273",
-        href: "tel:18035638273",
-      },
-      {
-        label: "抖音",
-        value: "29919058295",
-      },
+      { label: "微信", value: "suxiaojian0828" },
+      { label: "电话", value: "18035638273", href: "tel:18035638273" },
+      { label: "抖音", value: "29919058295" },
       {
         label: "邮箱",
         value: "xiaosuzi1987@gmail.com",
@@ -73,7 +66,9 @@ const siteContent = {
       },
     ] satisfies ContactItem[],
     primary: "发邮件咨询",
-    secondary: "查看案例",
+    secondary: "查看方案",
+    wechatTitle: "扫码加微信更直接",
+    wechatText: "如果你已经有想法、文案或参考网站，直接加微信发我会更快。",
   },
   footer: [
     { title: "沟通直接", text: "需求明确后再开始做，避免反复修改。" },
@@ -125,21 +120,27 @@ const steps: Step[] = [
 
 const cases: CaseItem[] = [
   {
-    title: "企业官网方案",
-    summary: "适合展示公司介绍、业务范围、服务优势和联系方式，先把企业官网门面搭起来。",
-    tags: ["企业官网", "品牌展示", "联系入口"],
+    title: "企业展示型官网",
+    audience: "适合：小公司、工厂、咨询类业务",
+    summary:
+      "重点把公司介绍、业务范围、服务优势、合作流程和联系方式展示清楚。适合客户先建立品牌形象，再逐步补案例和文章内容。",
+    tags: ["首页 + 关于 + 服务 + 联系方式", "适合先上线", "建立基础信任"],
     tone: "from-[#e8f1ff] to-[#f8fbff]",
   },
   {
-    title: "产品展示页方案",
-    summary: "适合介绍产品卖点、参数、应用场景和合作方式，方便发给客户查看。",
-    tags: ["产品展示", "业务介绍", "手机适配"],
+    title: "产品展示型页面",
+    audience: "适合：外贸、单品展示、招商推广",
+    summary:
+      "围绕某个产品或业务单独做展示页，集中讲卖点、参数、适用场景和合作方式。方便发给客户查看，也适合后续配合推广使用。",
+    tags: ["产品卖点展示", "适合单页转化", "手机端友好"],
     tone: "from-[#eef7ff] to-[#ffffff]",
   },
   {
-    title: "服务介绍页方案",
-    summary: "适合门店、工作室和本地服务，把服务内容、流程和咨询方式讲清楚。",
-    tags: ["服务页", "咨询转化", "快速上线"],
+    title: "服务介绍型页面",
+    audience: "适合：门店、工作室、培训、本地服务",
+    summary:
+      "把服务项目、适合人群、价格范围、咨询方式整理成一页，客户一看就知道你做什么、怎么联系你，减少来回解释成本。",
+    tags: ["服务说明清楚", "咨询入口明确", "适合接单展示"],
     tone: "from-[#edf4ff] to-[#f8fbff]",
   },
 ];
@@ -263,7 +264,7 @@ export default function Home() {
               <p className="mt-2 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
             </div>
             <nav className="hidden items-center gap-10 pt-2 text-lg font-medium lg:flex">
-              {["首页", "服务内容", "适合行业", "制作流程", "案例展示", "联系我们"].map(
+              {["首页", "服务内容", "适合行业", "制作流程", "成交页展示", "联系我们"].map(
                 (item, index) => (
                   <a
                     key={item}
@@ -471,7 +472,7 @@ export default function Home() {
 
       <section id="cases" className="section-soft">
         <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-12 lg:py-24">
-          <SectionTitle title="方案展示" />
+          <SectionTitle title="成交页展示" />
           <div className="grid gap-6 lg:grid-cols-3">
             {cases.map((item) => (
               <article
@@ -480,7 +481,9 @@ export default function Home() {
               >
                 <div className="case-screen flex h-56 items-end rounded-[1.5rem] p-6 text-white">
                   <div>
-                    <p className="text-sm uppercase tracking-[0.22em] text-white/70">Case Preview</p>
+                    <p className="text-sm uppercase tracking-[0.22em] text-white/70">
+                      {item.audience}
+                    </p>
                     <h3 className="mt-3 text-3xl font-semibold">{item.title}</h3>
                   </div>
                 </div>
@@ -502,21 +505,54 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-10 sm:px-10 lg:px-12">
-        <div className="grid gap-6 lg:grid-cols-4">
-          {siteContent.contact.contacts.map((item) => (
-            <a
-              key={item.label}
-              href={item.href ?? "#contact"}
-              className="rounded-[1.5rem] border border-[#dbe8ff] bg-white px-6 py-6 shadow-[0_12px_36px_rgba(43,94,184,0.08)] transition hover:translate-y-[-2px]"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#2d7dff]">
-                {item.label}
-              </p>
-              <p className="mt-4 text-2xl font-semibold tracking-tight text-[#182233]">
-                {item.value}
-              </p>
-            </a>
-          ))}
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {siteContent.contact.contacts.map((item) => (
+              <a
+                key={item.label}
+                href={item.href ?? "#contact"}
+                className="rounded-[1.5rem] border border-[#dbe8ff] bg-white px-6 py-6 shadow-[0_12px_36px_rgba(43,94,184,0.08)] transition hover:translate-y-[-2px]"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#2d7dff]">
+                  {item.label}
+                </p>
+                <p className="mt-4 text-2xl font-semibold tracking-tight text-[#182233]">
+                  {item.value}
+                </p>
+              </a>
+            ))}
+          </div>
+
+          <div className="rounded-[1.8rem] border border-[#dbe8ff] bg-[linear-gradient(180deg,#ffffff,#f5f9ff)] p-6 shadow-[0_16px_40px_rgba(43,94,184,0.1)]">
+            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#2d7dff]">
+              WeChat
+            </p>
+            <h3 className="mt-4 text-3xl font-semibold tracking-tight text-[#182233]">
+              {siteContent.contact.wechatTitle}
+            </h3>
+            <p className="mt-4 text-lg leading-8 text-[#5d6b7e]">
+              {siteContent.contact.wechatText}
+            </p>
+            <div className="mt-6 flex items-center gap-6">
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#dbe8ff] bg-white shadow-[0_12px_30px_rgba(43,94,184,0.08)]">
+                <Image
+                  src="/wechat-qr.jpg"
+                  alt="浮云阁微信二维码"
+                  width={220}
+                  height={220}
+                  className="h-56 w-56 object-cover"
+                  priority
+                />
+              </div>
+              <div className="space-y-3">
+                <p className="text-sm uppercase tracking-[0.2em] text-[#6d7f95]">微信号</p>
+                <p className="text-2xl font-semibold text-[#182233]">suxiaojian0828</p>
+                <p className="text-base leading-7 text-[#607085]">
+                  扫码添加微信，方便直接发需求、文案和参考网站。
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
