@@ -163,7 +163,13 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
   switch (type) {
     case "design":
       return (
-        <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={common}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <rect x="10" y="14" width="28" height="36" rx="4" />
           <path d="M23 46h20a4 4 0 0 0 4-4V24" />
           <path d="M28 22 48 8a4 4 0 0 1 5 6L33 34l-9 2 2-9Z" />
@@ -171,7 +177,13 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "mobile":
       return (
-        <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={common}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <rect x="19" y="8" width="26" height="48" rx="5" />
           <path d="M28 15h8" />
           <circle cx="32" cy="48" r="1.8" fill="currentColor" stroke="none" />
@@ -179,7 +191,13 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "form":
       return (
-        <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={common}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <rect x="12" y="12" width="40" height="40" rx="4" />
           <path d="M22 24h20M22 32h20M22 40h12" />
           <circle cx="44" cy="40" r="5" />
@@ -188,14 +206,26 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "cloud":
       return (
-        <svg viewBox="0 0 64 64" className={common} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={common}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <path d="M22 48h22a10 10 0 0 0 1-20 14 14 0 0 0-27-4A10 10 0 0 0 22 48Z" />
           <path d="m32 24 0 18M24 34l8 8 8-8" />
         </svg>
       );
     case "home":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <path d="M12 30 32 14l20 16" />
           <path d="M18 28v22h28V28" />
           <path d="M27 50V36h10v14" />
@@ -203,7 +233,13 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "camera":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <rect x="12" y="20" width="40" height="26" rx="4" />
           <path d="M22 20 26 14h12l4 6" />
           <circle cx="32" cy="33" r="8" />
@@ -211,7 +247,13 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "team":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <circle cx="24" cy="26" r="7" />
           <circle cx="41" cy="28" r="6" />
           <path d="M12 48c2-7 8-11 15-11s13 4 15 11" />
@@ -220,7 +262,13 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "cap":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <path d="M8 25 32 14l24 11-24 11Z" />
           <path d="M18 31v8c0 4 7 8 14 8s14-4 14-8v-8" />
           <path d="M56 26v12" />
@@ -228,21 +276,39 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
       );
     case "globe":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <circle cx="32" cy="32" r="18" />
           <path d="M14 32h36M32 14a28 28 0 0 1 0 36M32 14a28 28 0 0 0 0 36" />
         </svg>
       );
     case "factory":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <path d="M10 50V28l14 8V28l14 8V18l16 10v22Z" />
           <path d="M18 50V38M30 50V42M42 50V36M52 50V40" />
         </svg>
       );
     case "pin":
       return (
-        <svg viewBox="0 0 64 64" className={white} fill="none" stroke="currentColor" strokeWidth="2.8">
+        <svg
+          viewBox="0 0 64 64"
+          className={white}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.8"
+        >
           <path d="M32 54s14-14 14-25a14 14 0 1 0-28 0c0 11 14 25 14 25Z" />
           <circle cx="32" cy="29" r="5" />
         </svg>
@@ -315,7 +381,7 @@ export default function Home() {
                 >
                   <span>{siteContent.hero.secondaryCta}</span>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#d7e5ff] text-base font-semibold">
-                    ⌁
+                    微信
                   </span>
                 </a>
               </div>
@@ -564,7 +630,13 @@ export default function Home() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-start gap-5">
               <div className="flex h-22 w-22 shrink-0 items-center justify-center rounded-full bg-white text-[#2a7cff] shadow-[0_10px_24px_rgba(255,255,255,0.24)]">
-                <svg viewBox="0 0 64 64" className="h-11 w-11" fill="none" stroke="currentColor" strokeWidth="2.6">
+                <svg
+                  viewBox="0 0 64 64"
+                  className="h-11 w-11"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.6"
+                >
                   <path d="M16 20h24a10 10 0 0 1 10 10v2a10 10 0 0 1-10 10H28l-10 8v-8h-2A10 10 0 0 1 6 32v-2a10 10 0 0 1 10-10Z" />
                   <circle cx="22" cy="31" r="2.5" fill="currentColor" stroke="none" />
                   <circle cx="32" cy="31" r="2.5" fill="currentColor" stroke="none" />
@@ -592,14 +664,14 @@ export default function Home() {
                 href={`mailto:${siteContent.contact.email}`}
                 className="inline-flex h-16 items-center justify-center gap-3 rounded-2xl bg-white px-9 text-xl font-semibold text-[#2a74ee] transition hover:bg-[#f3f7ff]"
               >
-                <span>⌁</span>
+                <span>✉</span>
                 <span>{siteContent.contact.primary}</span>
               </a>
               <a
                 href="#cases"
                 className="inline-flex h-16 items-center justify-center gap-3 rounded-2xl border border-white/60 px-9 text-xl font-semibold text-white transition hover:bg-white/10"
               >
-                <span>⇪</span>
+                <span>↗</span>
                 <span>{siteContent.contact.secondary}</span>
               </a>
             </div>
@@ -612,7 +684,7 @@ export default function Home() {
           {siteContent.footer.map((item) => (
             <div key={item.title}>
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/18 bg-white/6">
-                <span className="text-xl text-white/88">◌</span>
+                <span className="text-xl text-white/88">●</span>
               </div>
               <p className="text-2xl font-semibold">{item.title}</p>
               <p className="mt-3 text-lg text-white/72">{item.text}</p>

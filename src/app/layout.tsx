@@ -23,13 +23,7 @@ export const metadata: Metadata = {
   description:
     "浮云阁提供企业官网、产品展示页、服务介绍页和联系表单制作，适合预算不高、想尽快上线的客户。",
   applicationName: "浮云阁",
-  keywords: [
-    "企业官网制作",
-    "展示页制作",
-    "官网搭建",
-    "网站定制",
-    "浮云阁",
-  ],
+  keywords: ["企业官网制作", "展示页制作", "官网搭建", "网站定制", "浮云阁"],
   alternates: {
     canonical: "/",
   },
@@ -53,8 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "浮云阁 | 企业官网与展示页制作",
-    description:
-      "企业官网、展示页、服务页制作，适合想尽快上线的客户。",
+    description: "企业官网、展示页、服务页制作，适合想尽快上线的客户。",
     images: ["/opengraph-image"],
   },
   icons: {

@@ -17,15 +17,15 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background:
-            "linear-gradient(135deg, rgba(9,35,86,1), rgba(38,117,255,0.92))",
-          color: "white",
-          fontSize: 160,
-          fontWeight: 800,
-          letterSpacing: "-0.08em",
+          background: "#050505",
+          color: "#ffffff",
+          fontSize: 148,
+          fontWeight: 900,
+          letterSpacing: "-0.1em",
+          fontFamily: "Arial, sans-serif",
         }}
       >
-        浮
+        FYG
       </div>
     ),
     size,
