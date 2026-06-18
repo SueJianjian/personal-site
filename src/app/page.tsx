@@ -23,55 +23,84 @@ type CaseItem = {
   tone: string;
 };
 
+type ContactItem = {
+  label: string;
+  value: string;
+  href?: string;
+};
+
 const siteContent = {
   brand: {
     title: "浮云阁",
-    slogan: "最近开始接企业官网 / 展示页制作",
+    slogan: "企业官网 / 展示页制作",
   },
   hero: {
     title: ["专业定制官网", "让你的业务更有信任感"],
     lines: [
-      "比较适合预算不高、想尽快上线的客户。",
-      "如果你身边有人正好要做网站，可以帮我介绍一下。",
-      "有参考网站的话，发我就能先估价。",
+      "适合预算不高、想尽快上线的企业、门店和工作室。",
+      "页面重点清晰，先把你的业务、服务和联系方式展示明白。",
+      "有参考网站的话，直接发我，我可以先帮你估一个大概价格。",
     ],
-    primaryCta: "先看方案",
-    secondaryCta: "咨询报价",
+    primaryCta: "查看方案",
+    secondaryCta: "立即咨询",
+  },
+  summary: {
+    title: "适合想尽快上线、先把官网做出来的客户",
+    text: "如果你需要一个干净、专业、能展示业务并接住咨询的官网，这种方案会更适合你。先把门面搭起来，后面再逐步补内容和案例。",
   },
   contact: {
+    title: "联系方式",
+    lead: "想做企业官网、展示页或服务介绍页，可以直接加我微信、发邮件，或者把参考网站发给我。",
     email: "xiaosuzi1987@gmail.com",
-    primary: "立即咨询",
-    secondary: "发送参考网站",
-    title: "先做方案，再确认价格",
-    text: "把你的行业、业务方向和参考网站发给我，就能先给你一个大概报价。",
-    contactHint: "微信：suxiaojian0828  电话：18035638273  抖音：29919058295",
+    contacts: [
+      {
+        label: "微信",
+        value: "suxiaojian0828",
+      },
+      {
+        label: "电话",
+        value: "18035638273",
+        href: "tel:18035638273",
+      },
+      {
+        label: "抖音",
+        value: "29919058295",
+      },
+      {
+        label: "邮箱",
+        value: "xiaosuzi1987@gmail.com",
+        href: "mailto:xiaosuzi1987@gmail.com",
+      },
+    ] satisfies ContactItem[],
+    primary: "发邮件咨询",
+    secondary: "查看案例",
   },
   footer: [
-    { title: "快速响应", text: "及时沟通，高效对接" },
-    { title: "用心设计", text: "页面清晰，重点突出" },
-    { title: "靠谱交付", text: "适合先上线再逐步完善" },
+    { title: "沟通直接", text: "需求明确后再开始做，避免反复修改。" },
+    { title: "页面实用", text: "优先展示业务重点和联系方式，不堆花哨内容。" },
+    { title: "方便上线", text: "适合先上线使用，再逐步完善文案和案例。" },
   ],
 };
 
 const services: Service[] = [
   {
     title: "公司官网",
-    description: ["展示公司介绍", "建立基础信任感"],
+    description: ["展示公司介绍、业务范围", "建立基础信任感"],
     icon: "design",
   },
   {
     title: "产品展示页",
-    description: ["突出产品卖点", "适合业务展示"],
+    description: ["突出产品卖点", "适合单独介绍产品或业务"],
     icon: "mobile",
   },
   {
     title: "服务介绍页",
-    description: ["梳理服务内容", "清楚说明流程"],
+    description: ["把服务内容和流程讲清楚", "方便客户快速了解"],
     icon: "form",
   },
   {
     title: "联系表单",
-    description: ["方便客户咨询联系", "支持基础信息收集"],
+    description: ["支持咨询收集", "兼顾手机端浏览和使用"],
     icon: "cloud",
   },
 ];
@@ -83,34 +112,34 @@ const industries: Industry[] = [
   { title: "培训机构", icon: "cap", tone: "from-cyan-700 to-slate-900" },
   { title: "工厂制造", icon: "factory", tone: "from-gray-300 to-gray-600" },
   { title: "外贸业务", icon: "globe", tone: "from-sky-500 to-blue-900" },
-  { title: "产品展示", icon: "team", tone: "from-stone-300 to-stone-700" },
+  { title: "咨询展示", icon: "team", tone: "from-stone-300 to-stone-700" },
 ];
 
 const steps: Step[] = [
-  { number: "01", title: "沟通需求", description: ["了解行业和目标", "确认页面方向"] },
-  { number: "02", title: "方案设计", description: ["规划首页结构", "确定展示重点"] },
-  { number: "03", title: "开发制作", description: ["完成页面开发", "处理响应式适配"] },
-  { number: "04", title: "测试调整", description: ["检查手机和电脑", "修改细节问题"] },
-  { number: "05", title: "上线交付", description: ["部署上线", "后续可继续补内容"] },
+  { number: "01", title: "沟通需求", description: ["了解行业和用途", "确认页面方向"] },
+  { number: "02", title: "整理方案", description: ["确定结构和重点", "确认展示逻辑"] },
+  { number: "03", title: "页面制作", description: ["完成页面开发", "处理手机端适配"] },
+  { number: "04", title: "测试调整", description: ["检查细节问题", "修改不合适的部分"] },
+  { number: "05", title: "上线交付", description: ["部署上线", "后续可继续补充内容"] },
 ];
 
 const cases: CaseItem[] = [
   {
     title: "企业官网方案",
-    summary: "适合展示公司介绍、业务范围、服务优势和联系方式，先把企业门面搭起来。",
-    tags: ["企业官网", "品牌展示", "联系方式"],
+    summary: "适合展示公司介绍、业务范围、服务优势和联系方式，先把企业官网门面搭起来。",
+    tags: ["企业官网", "品牌展示", "联系入口"],
     tone: "from-[#e8f1ff] to-[#f8fbff]",
   },
   {
     title: "产品展示页方案",
-    summary: "适合单独介绍产品卖点、参数、使用场景和合作方式，方便发给客户查看。",
+    summary: "适合介绍产品卖点、参数、应用场景和合作方式，方便发给客户查看。",
     tags: ["产品展示", "业务介绍", "手机适配"],
     tone: "from-[#eef7ff] to-[#ffffff]",
   },
   {
     title: "服务介绍页方案",
-    summary: "适合工作室、门店、培训和本地服务，把服务内容、流程和咨询入口讲清楚。",
-    tags: ["服务介绍", "咨询转化", "快速上线"],
+    summary: "适合门店、工作室和本地服务，把服务内容、流程和咨询方式讲清楚。",
+    tags: ["服务页", "咨询转化", "快速上线"],
     tone: "from-[#edf4ff] to-[#f8fbff]",
   },
 ];
@@ -221,10 +250,6 @@ function Icon({ type }: { type: Service["icon"] | Industry["icon"] }) {
 }
 
 export default function Home() {
-  const emailHref = siteContent.contact.email
-    ? `mailto:${siteContent.contact.email}`
-    : "#contact";
-
   return (
     <main className="overflow-x-hidden bg-white text-[#1a1a1a]">
       <section className="hero-section relative overflow-hidden">
@@ -362,6 +387,18 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-12">
+        <div className="rounded-[2rem] border border-[#d8e5ff] bg-[linear-gradient(180deg,#f8fbff,#eef5ff)] px-6 py-8 shadow-[0_16px_50px_rgba(47,94,174,0.08)] sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#2d7dff]">适合对象</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
+            {siteContent.summary.title}
+          </h2>
+          <p className="mt-4 max-w-4xl text-lg leading-8 text-[#566273]">
+            {siteContent.summary.text}
+          </p>
+        </div>
+      </section>
+
       <section id="services" className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-12 lg:py-24">
         <SectionTitle title="可提供的服务" />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -434,11 +471,11 @@ export default function Home() {
 
       <section id="cases" className="section-soft">
         <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-12 lg:py-24">
-          <SectionTitle title="案例展示" />
+          <SectionTitle title="方案展示" />
           <div className="grid gap-6 lg:grid-cols-3">
             {cases.map((item) => (
               <article
-                key={item.title + item.summary}
+                key={item.title}
                 className={`rounded-[2rem] border border-[#dfe9fb] bg-gradient-to-br ${item.tone} p-8 shadow-[0_16px_50px_rgba(43,94,184,0.08)] transition hover:translate-y-[-4px] hover:shadow-[0_24px_64px_rgba(43,94,184,0.14)]`}
               >
                 <div className="case-screen flex h-56 items-end rounded-[1.5rem] p-6 text-white">
@@ -464,8 +501,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 pb-10 sm:px-10 lg:px-12">
+        <div className="grid gap-6 lg:grid-cols-4">
+          {siteContent.contact.contacts.map((item) => (
+            <a
+              key={item.label}
+              href={item.href ?? "#contact"}
+              className="rounded-[1.5rem] border border-[#dbe8ff] bg-white px-6 py-6 shadow-[0_12px_36px_rgba(43,94,184,0.08)] transition hover:translate-y-[-2px]"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#2d7dff]">
+                {item.label}
+              </p>
+              <p className="mt-4 text-2xl font-semibold tracking-tight text-[#182233]">
+                {item.value}
+              </p>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 pb-18 sm:px-10 lg:px-12 lg:pb-24">
-        <div id="contact" className="rounded-[2rem] bg-[linear-gradient(90deg,#1b76ff,#2f90ff)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(32,105,236,0.24)] sm:px-10 lg:px-14 lg:py-10">
+        <div
+          id="contact"
+          className="rounded-[2rem] bg-[linear-gradient(90deg,#1b76ff,#2f90ff)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(32,105,236,0.24)] sm:px-10 lg:px-14 lg:py-10"
+        >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-start gap-5">
               <div className="flex h-22 w-22 shrink-0 items-center justify-center rounded-full bg-white text-[#2a7cff] shadow-[0_10px_24px_rgba(255,255,255,0.24)]">
@@ -477,17 +536,24 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-4xl font-semibold tracking-tight">{siteContent.contact.title}</h3>
-                <p className="mt-4 max-w-xl text-xl leading-9 text-white/92">
-                  {siteContent.contact.text}
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/78">
+                  Contact
                 </p>
-                <p className="mt-3 text-base text-white/80">{siteContent.contact.contactHint}</p>
-                <p className="mt-2 text-base text-white/80">{siteContent.contact.email}</p>
+                <h3 className="mt-3 text-4xl font-semibold tracking-tight">
+                  {siteContent.contact.title}
+                </h3>
+                <p className="mt-4 max-w-2xl text-xl leading-9 text-white/92">
+                  {siteContent.contact.lead}
+                </p>
+                <p className="mt-4 text-lg text-white/88">
+                  微信：suxiaojian0828 / 电话：18035638273 / 抖音：29919058295
+                </p>
+                <p className="mt-2 text-lg text-white/88">{siteContent.contact.email}</p>
               </div>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href={emailHref}
+                href={`mailto:${siteContent.contact.email}`}
                 className="inline-flex h-16 items-center justify-center gap-3 rounded-2xl bg-white px-9 text-xl font-semibold text-[#2a74ee] transition hover:bg-[#f3f7ff]"
               >
                 <span>⌁</span>
