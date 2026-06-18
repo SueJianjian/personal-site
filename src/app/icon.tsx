@@ -19,13 +19,20 @@ export default function Icon() {
           justifyContent: "center",
           background: "#050505",
           color: "#ffffff",
-          fontSize: 148,
+          fontSize: 206,
           fontWeight: 900,
-          letterSpacing: "-0.1em",
-          fontFamily: "Arial, sans-serif",
+          letterSpacing: "-0.14em",
+          fontFamily: '"Arial Black", Arial, sans-serif',
         }}
       >
-        FYG
+        <div
+          style={{
+            display: "flex",
+            transform: "translateY(-8px)",
+          }}
+        >
+          FYG
+        </div>
       </div>
     ),
     size,
