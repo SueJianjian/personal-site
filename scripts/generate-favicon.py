@@ -24,16 +24,16 @@ def main() -> None:
     size = 512
     image = Image.new("RGBA", (size, size), "#050505")
     draw = ImageDraw.Draw(image)
-    font = load_font(228)
+    font = load_font(252)
     text = "FYG"
 
     bbox = draw.textbbox((0, 0), text, font=font, spacing=0)
     width = bbox[2] - bbox[0]
     height = bbox[3] - bbox[1]
     x = (size - width) / 2 - bbox[0]
-    y = (size - height) / 2 - bbox[1] - 8
+    y = (size - height) / 2 - bbox[1] - 9
 
-    draw.text((x, y), text, fill="white", font=font, spacing=0)
+    draw.text((x - 1, y), text, fill="white", font=font, spacing=0)
 
     ICON_PNG.parent.mkdir(parents=True, exist_ok=True)
     image.save(ICON_PNG, format="PNG")
