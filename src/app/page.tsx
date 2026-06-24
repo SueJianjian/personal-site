@@ -32,6 +32,13 @@ type ContactItem = {
   href?: string;
 };
 
+type SupportPlan = {
+  name: string;
+  price: string;
+  description: string;
+  bullets: string[];
+};
+
 const supportInfo = {
   eyebrow: "Support",
   title: "Support my open source maintenance work",
@@ -41,6 +48,27 @@ const supportInfo = {
   paypalUrl: "https://www.paypal.me/suxiaojian2",
   githubUrl: "https://github.com/SueJianjian",
 };
+
+const supportPlans: SupportPlan[] = [
+  {
+    name: "Quick Fix",
+    price: "$50",
+    description: "For one clearly scoped bug, lint, test, CI, or small PR finishing task.",
+    bullets: ["1 focused fix", "Minimal code change", "Short delivery summary"],
+  },
+  {
+    name: "PR Rescue",
+    price: "$100",
+    description: "For a stuck pull request that needs review follow-through and merge cleanup.",
+    bullets: ["1 PR push to merge-ready", "Review, lint, test, and CI fixes", "Clear blocker summary if still blocked"],
+  },
+  {
+    name: "Weekly Maintenance",
+    price: "$200/week",
+    description: "For small projects that want steady weekly help on maintenance work.",
+    bullets: ["1 to 3 small issues per week", "Bug fixes and CI cleanup", "Reliable weekly follow-through"],
+  },
+];
 
 const siteContent = {
   brand: {
@@ -731,6 +759,37 @@ export default function Home() {
                 View GitHub Profile
               </a>
             </div>
+          </div>
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {supportPlans.map((plan) => (
+              <article
+                key={plan.name}
+                className="rounded-[1.6rem] border border-[#d9e6ff] bg-white p-6 shadow-[0_12px_34px_rgba(43,94,184,0.07)]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#2d7dff]">
+                      {plan.name}
+                    </p>
+                    <h4 className="mt-3 text-3xl font-semibold tracking-tight text-[#182233]">
+                      {plan.price}
+                    </h4>
+                  </div>
+                  <span className="rounded-full bg-[#edf4ff] px-3 py-1 text-sm font-medium text-[#2567d8]">
+                    PayPal
+                  </span>
+                </div>
+                <p className="mt-4 text-base leading-7 text-[#5d6b7e]">{plan.description}</p>
+                <div className="mt-5 space-y-3">
+                  {plan.bullets.map((bullet) => (
+                    <p key={bullet} className="flex items-start gap-3 text-sm leading-6 text-[#425067]">
+                      <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#2d7dff]" />
+                      <span>{bullet}</span>
+                    </p>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
