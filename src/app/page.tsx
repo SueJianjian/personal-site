@@ -32,6 +32,16 @@ type ContactItem = {
   href?: string;
 };
 
+const supportInfo = {
+  eyebrow: "Support",
+  title: "Support my open source maintenance work",
+  description:
+    "Besides client website work, I also spend time on bug fixes, test and CI cleanup, review follow-through, and getting stuck pull requests into merge-ready shape.",
+  tags: ["bug fixes", "test and CI cleanup", "review follow-through"],
+  paypalUrl: "https://www.paypal.me/suxiaojian2",
+  githubUrl: "https://github.com/SueJianjian",
+};
+
 const siteContent = {
   brand: {
     title: "浮云阁",
@@ -673,6 +683,52 @@ export default function Home() {
               >
                 <span>↗</span>
                 <span>{siteContent.contact.secondary}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-18 sm:px-10 lg:px-12 lg:pb-24">
+        <div className="rounded-[2rem] border border-[#dbe8ff] bg-[linear-gradient(180deg,#ffffff,#f6faff)] px-6 py-8 shadow-[0_18px_48px_rgba(43,94,184,0.08)] sm:px-10 lg:px-14">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#2d7dff]">
+                {supportInfo.eyebrow}
+              </p>
+              <h3 className="mt-3 text-3xl font-semibold tracking-tight text-[#182233] sm:text-4xl">
+                {supportInfo.title}
+              </h3>
+              <p className="mt-4 text-lg leading-8 text-[#5d6b7e]">
+                {supportInfo.description}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {supportInfo.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-[#cfe0ff] bg-white px-4 py-2 text-sm font-medium text-[#2567d8]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
+              <a
+                href={supportInfo.paypalUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-14 items-center justify-center rounded-2xl bg-[linear-gradient(90deg,#1b76ff,#48a1ff)] px-8 text-lg font-semibold text-white shadow-[0_16px_36px_rgba(34,115,255,0.24)] transition hover:translate-y-[-1px] hover:shadow-[0_20px_44px_rgba(34,115,255,0.3)]"
+              >
+                Support via PayPal
+              </a>
+              <a
+                href={supportInfo.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-14 items-center justify-center rounded-2xl border border-[#cfe0ff] bg-white px-8 text-lg font-semibold text-[#2567d8] transition hover:bg-[#f6faff]"
+              >
+                View GitHub Profile
               </a>
             </div>
           </div>
