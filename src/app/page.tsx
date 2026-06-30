@@ -32,44 +32,6 @@ type ContactItem = {
   href?: string;
 };
 
-type SupportPlan = {
-  name: string;
-  price: string;
-  description: string;
-  bullets: string[];
-};
-
-const supportInfo = {
-  eyebrow: "Support",
-  title: "Support my open source maintenance work",
-  description:
-    "Besides client website work, I also spend time on bug fixes, test and CI cleanup, review follow-through, and getting stuck pull requests into merge-ready shape.",
-  tags: ["bug fixes", "test and CI cleanup", "review follow-through"],
-  paypalUrl: "https://www.paypal.me/suxiaojian2",
-  githubUrl: "https://github.com/SueJianjian",
-};
-
-const supportPlans: SupportPlan[] = [
-  {
-    name: "Quick Fix",
-    price: "$50",
-    description: "For one clearly scoped bug, lint, test, CI, or small PR finishing task.",
-    bullets: ["1 focused fix", "Minimal code change", "Short delivery summary"],
-  },
-  {
-    name: "PR Rescue",
-    price: "$100",
-    description: "For a stuck pull request that needs review follow-through and merge cleanup.",
-    bullets: ["1 PR push to merge-ready", "Review, lint, test, and CI fixes", "Clear blocker summary if still blocked"],
-  },
-  {
-    name: "Weekly Maintenance",
-    price: "$200/week",
-    description: "For small projects that want steady weekly help on maintenance work.",
-    bullets: ["1 to 3 small issues per week", "Bug fixes and CI cleanup", "Reliable weekly follow-through"],
-  },
-];
-
 const siteContent = {
   brand: {
     title: "晋城浮云阁工作室",
@@ -78,23 +40,23 @@ const siteContent = {
   hero: {
     title: ["专业定制官网", "让你的业务更有信任感"],
     lines: [
-      "适合预算不高、想尽快上线的企业、门店和工作室。",
-      "页面重点清晰，先把你的业务、服务和联系方式展示明白。",
-      "有参考网站的话，直接发我，我可以先帮你估一个大概价格。",
+      "为企业、门店、工作室制作清晰可信的官网和业务展示页。",
+      "重点呈现服务、优势、流程和联系方式，让客户看完就知道怎么合作。",
+      "有参考网站或现成文案可以直接发来，我会先帮你梳理页面结构和报价范围。",
     ],
-    primaryCta: "查看方案",
-    secondaryCta: "立即咨询",
+    primaryCta: "查看服务方案",
+    secondaryCta: "加微信咨询",
   },
   summary: {
-    title: "适合想尽快上线、先把官网做出来的客户",
-    text: "如果你需要一个干净、专业、能展示业务并接住咨询的官网，这种方式会更适合。先把页面做出来上线，再根据实际需求逐步补案例、文章和细节内容。",
+    title: "适合需要快速建立专业线上门面的客户",
+    text: "先把业务讲清楚、联系方式放清楚、页面做得可信耐看，再根据后续经营情况逐步增加案例、文章、产品和表单。页面不是堆效果，而是帮助客户更快理解你、信任你、联系你。",
   },
   contact: {
-    title: "直接联系我",
-    lead: "想做企业官网、展示页或服务介绍页，可以直接加我微信、发邮件，或者把参考网站发给我。",
+    title: "把需求发来，先判断适合怎么做",
+    lead: "想做企业官网、展示页或服务介绍页，可以直接加微信，把行业、参考网站、已有文案和图片发来，我会先帮你梳理方向。",
     email: "jcfuyunge@163.com",
     contacts: [
-      { label: "微信", value: "JCFuYunGe" },
+      { label: "微信", value: "JCFuYunGe", href: "#wechat" },
       { label: "电话", value: "18035638273", href: "tel:18035638273" },
       { label: "抖音", value: "66466905135" },
       {
@@ -104,7 +66,7 @@ const siteContent = {
       },
     ] satisfies ContactItem[],
     primary: "发邮件咨询",
-    secondary: "查看方案",
+    secondary: "查看服务方案",
     wechatTitle: "扫码加微信更直接",
     wechatText: "如果你已经有想法、文案或参考网站，直接加微信发我会更快。",
   },
@@ -372,7 +334,7 @@ export default function Home() {
               <p className="mt-1 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
             </div>
             <nav className="hidden items-center gap-10 pt-2 text-lg font-medium lg:flex">
-              {["首页", "服务内容", "适合行业", "制作流程", "成交页展示", "联系我们"].map(
+              {["首页", "服务内容", "适合行业", "制作流程", "服务方案", "联系我们"].map(
                 (item, index) => (
                   <a
                     key={item}
@@ -411,18 +373,20 @@ export default function Home() {
               </div>
               <div className="mt-12 flex flex-col gap-5 sm:flex-row">
                 <a
-                  className="inline-flex h-16 items-center justify-center gap-4 rounded-full bg-[linear-gradient(90deg,#1b76ff,#48a1ff)] px-10 text-xl font-semibold shadow-[0_18px_40px_rgba(34,115,255,0.3)] transition hover:translate-y-[-1px] hover:shadow-[0_24px_52px_rgba(34,115,255,0.36)]"
+                  className="cta-button cta-button-primary"
                   href="#cases"
+                  aria-label="查看服务方案和适合类型"
                 >
                   <span>{siteContent.hero.primaryCta}</span>
-                  <span aria-hidden="true">→</span>
+                  <span className="cta-icon" aria-hidden="true">→</span>
                 </a>
                 <a
-                  className="inline-flex h-16 items-center justify-center gap-4 rounded-full bg-white px-10 text-xl font-semibold text-[#1b58d6] shadow-[0_16px_38px_rgba(17,43,97,0.24)] transition hover:translate-y-[-1px] hover:bg-[#f7fbff]"
-                  href="#contact"
+                  className="cta-button cta-button-secondary"
+                  href="#wechat"
+                  aria-label="跳转到微信二维码咨询"
                 >
                   <span>{siteContent.hero.secondaryCta}</span>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#d7e5ff] text-base font-semibold">
+                  <span className="cta-pill" aria-hidden="true">
                     微信
                   </span>
                 </a>
@@ -497,7 +461,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-12">
-        <div className="rounded-[2rem] border border-[#d8e5ff] bg-[linear-gradient(180deg,#f8fbff,#eef5ff)] px-6 py-8 shadow-[0_16px_50px_rgba(47,94,174,0.08)] sm:px-8">
+        <div className="rounded-[1.5rem] border border-[#d8e5ff] bg-[linear-gradient(180deg,#f8fbff,#eef5ff)] px-6 py-8 shadow-[0_16px_50px_rgba(47,94,174,0.08)] sm:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#2d7dff]">适合对象</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
             {siteContent.summary.title}
@@ -514,7 +478,7 @@ export default function Home() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-[1.8rem] border border-[#e8eff9] bg-white px-8 py-10 text-center shadow-[0_10px_40px_rgba(47,94,174,0.06)]"
+                className="rounded-[1.25rem] border border-[#e8eff9] bg-white px-8 py-10 text-center shadow-[0_10px_40px_rgba(47,94,174,0.06)] transition hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(47,94,174,0.12)]"
             >
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[1.4rem] bg-[#f4f9ff]">
                 <Icon type={service.icon} />
@@ -580,12 +544,12 @@ export default function Home() {
 
       <section id="cases" className="section-soft">
         <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-12 lg:py-24">
-          <SectionTitle title="成交页展示" />
+          <SectionTitle title="服务方案" />
           <div className="grid gap-6 lg:grid-cols-3">
             {cases.map((item) => (
               <article
                 key={item.title}
-                className={`rounded-[2rem] border border-[#dfe9fb] bg-gradient-to-br ${item.tone} p-8 shadow-[0_16px_50px_rgba(43,94,184,0.08)] transition hover:translate-y-[-4px] hover:shadow-[0_24px_64px_rgba(43,94,184,0.14)]`}
+                className={`rounded-[1.5rem] border border-[#dfe9fb] bg-gradient-to-br ${item.tone} p-8 shadow-[0_16px_50px_rgba(43,94,184,0.08)] transition hover:translate-y-[-4px] hover:shadow-[0_24px_64px_rgba(43,94,184,0.14)]`}
               >
                 <div className="case-screen flex h-56 items-end rounded-[1.5rem] p-6 text-white">
                   <div>
@@ -631,7 +595,8 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="rounded-[1.8rem] border border-[#dbe8ff] bg-[linear-gradient(180deg,#ffffff,#f5f9ff)] p-6 shadow-[0_16px_40px_rgba(43,94,184,0.1)]">
+          <div className="rounded-[1.5rem] border border-[#dbe8ff] bg-[linear-gradient(180deg,#ffffff,#f5f9ff)] p-6 shadow-[0_16px_40px_rgba(43,94,184,0.1)]">
+            <div id="wechat" className="scroll-mt-24" />
             <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#2d7dff]">
               WeChat
             </p>
@@ -717,83 +682,6 @@ export default function Home() {
                 <span>{siteContent.contact.secondary}</span>
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-18 sm:px-10 lg:px-12 lg:pb-24">
-        <div className="rounded-[2rem] border border-[#dbe8ff] bg-[linear-gradient(180deg,#ffffff,#f6faff)] px-6 py-8 shadow-[0_18px_48px_rgba(43,94,184,0.08)] sm:px-10 lg:px-14">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#2d7dff]">
-                {supportInfo.eyebrow}
-              </p>
-              <h3 className="mt-3 text-3xl font-semibold tracking-tight text-[#182233] sm:text-4xl">
-                {supportInfo.title}
-              </h3>
-              <p className="mt-4 text-lg leading-8 text-[#5d6b7e]">
-                {supportInfo.description}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                {supportInfo.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-[#cfe0ff] bg-white px-4 py-2 text-sm font-medium text-[#2567d8]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
-              <a
-                href={supportInfo.paypalUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-14 items-center justify-center rounded-2xl bg-[linear-gradient(90deg,#1b76ff,#48a1ff)] px-8 text-lg font-semibold text-white shadow-[0_16px_36px_rgba(34,115,255,0.24)] transition hover:translate-y-[-1px] hover:shadow-[0_20px_44px_rgba(34,115,255,0.3)]"
-              >
-                Support via PayPal
-              </a>
-              <a
-                href={supportInfo.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-14 items-center justify-center rounded-2xl border border-[#cfe0ff] bg-white px-8 text-lg font-semibold text-[#2567d8] transition hover:bg-[#f6faff]"
-              >
-                View GitHub Profile
-              </a>
-            </div>
-          </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {supportPlans.map((plan) => (
-              <article
-                key={plan.name}
-                className="rounded-[1.6rem] border border-[#d9e6ff] bg-white p-6 shadow-[0_12px_34px_rgba(43,94,184,0.07)]"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#2d7dff]">
-                      {plan.name}
-                    </p>
-                    <h4 className="mt-3 text-3xl font-semibold tracking-tight text-[#182233]">
-                      {plan.price}
-                    </h4>
-                  </div>
-                  <span className="rounded-full bg-[#edf4ff] px-3 py-1 text-sm font-medium text-[#2567d8]">
-                    PayPal
-                  </span>
-                </div>
-                <p className="mt-4 text-base leading-7 text-[#5d6b7e]">{plan.description}</p>
-                <div className="mt-5 space-y-3">
-                  {plan.bullets.map((bullet) => (
-                    <p key={bullet} className="flex items-start gap-3 text-sm leading-6 text-[#425067]">
-                      <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#2d7dff]" />
-                      <span>{bullet}</span>
-                    </p>
-                  ))}
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>

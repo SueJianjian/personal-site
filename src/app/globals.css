@@ -83,6 +83,80 @@ body::selection {
     0 0 14px rgba(255, 229, 166, 0.18);
 }
 
+.cta-button {
+  display: inline-flex;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 999px;
+  padding-inline: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 18px 40px rgba(4, 22, 62, 0.22);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.82);
+  outline-offset: 4px;
+}
+
+.cta-button-primary {
+  background: linear-gradient(90deg, #1672ff, #49a6ff);
+  color: #ffffff;
+  box-shadow: 0 18px 42px rgba(34, 115, 255, 0.34);
+}
+
+.cta-button-primary:hover {
+  box-shadow: 0 24px 56px rgba(34, 115, 255, 0.42);
+}
+
+.cta-button-secondary {
+  background: #ffffff;
+  color: #1551cf;
+  box-shadow: 0 18px 42px rgba(9, 30, 77, 0.26);
+}
+
+.cta-button-secondary:hover {
+  background: #f7fbff;
+  box-shadow: 0 24px 56px rgba(9, 30, 77, 0.3);
+}
+
+.cta-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.cta-pill {
+  display: inline-flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid #d7e5ff;
+  padding-inline: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .section-soft {
   background:
     radial-gradient(circle at 50% 50%, rgba(38, 117, 255, 0.08), transparent 46%),
@@ -169,4 +243,17 @@ svg {
 
 .text-balance {
   text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .brand-mark {
+    font-size: clamp(1.45rem, 8vw, 2.15rem);
+  }
+
+  .cta-button {
+    width: 100%;
+    min-height: 3.75rem;
+    padding-inline: 1.5rem;
+    font-size: 1.08rem;
+  }
 }
