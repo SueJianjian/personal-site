@@ -61,26 +61,21 @@ body::selection {
 .brand-mark {
   display: inline-block;
   color: #ffffff;
-  font-size: clamp(1.7rem, 4vw, 3.18rem);
-  font-weight: 950;
-  line-height: 1.1;
+  font-size: clamp(1.65rem, 3.72vw, 3rem);
+  font-weight: 900;
+  line-height: 1.08;
 }
 
 .brand-mark__text {
-  position: relative;
   display: inline-block;
   padding: 0;
-  color: transparent;
+  color: #ffffff;
   letter-spacing: 0;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #fffdf7 46%, #f4e4bd 74%, #ead09a 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0.7px rgba(255, 250, 236, 0.98);
-  filter: none;
+  background: none;
+  -webkit-text-stroke: 0;
   text-shadow:
-    0 0 1px rgba(255, 255, 255, 0.92),
-    0 0 14px rgba(255, 229, 166, 0.18);
+    0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 18px rgba(1, 18, 56, 0.28);
 }
 
 .brand-logo-tile {
