@@ -83,6 +83,18 @@ body::selection {
     0 0 14px rgba(255, 229, 166, 0.18);
 }
 
+.brand-logo-tile {
+  height: 3.5rem;
+  width: 6rem;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0.35rem;
+  box-shadow: 0 14px 32px rgba(2, 18, 58, 0.24);
+}
+
 .cta-button {
   display: inline-flex;
   min-height: 4rem;
@@ -248,6 +260,11 @@ svg {
 @media (max-width: 640px) {
   .brand-mark {
     font-size: clamp(1.45rem, 8vw, 2.15rem);
+  }
+
+  .brand-logo-tile {
+    height: 3rem;
+    width: 5rem;
   }
 
   .cta-button {

@@ -325,13 +325,25 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:120px_120px] opacity-20" />
         <div className="mx-auto max-w-7xl px-6 pb-14 pt-6 sm:px-10 lg:px-12 lg:pb-20">
           <header className="flex items-start justify-between gap-6 text-white">
-            <div>
-              <p className="brand-mark" aria-label={siteContent.brand.title}>
-                <span className="brand-mark__text" data-text={siteContent.brand.title}>
-                  {siteContent.brand.title}
-                </span>
-              </p>
-              <p className="mt-1 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
+            <div className="flex items-center gap-4">
+              <div className="brand-logo-tile" aria-hidden="true">
+                <Image
+                  src="/fuyunge-logo-horizontal.jpg"
+                  alt=""
+                  width={96}
+                  height={56}
+                  className="h-full w-full object-contain"
+                  priority
+                />
+              </div>
+              <div>
+                <p className="brand-mark" aria-label={siteContent.brand.title}>
+                  <span className="brand-mark__text" data-text={siteContent.brand.title}>
+                    {siteContent.brand.title}
+                  </span>
+                </p>
+                <p className="mt-1 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
+              </div>
             </div>
             <nav className="hidden items-center gap-10 pt-2 text-lg font-medium lg:flex">
               {["首页", "服务内容", "适合行业", "制作流程", "服务方案", "联系我们"].map(
