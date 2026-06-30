@@ -58,24 +58,48 @@ body::selection {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .brand-mark {
   display: inline-block;
   color: #ffffff;
-  font-size: clamp(1.65rem, 3.72vw, 3rem);
+  font-size: clamp(1.7rem, 3.78vw, 3.08rem);
   font-weight: 900;
-  line-height: 1.08;
+  line-height: 1.02;
 }
 
 .brand-mark__text {
   display: inline-block;
-  padding: 0;
+  padding: 0.02em 0;
   color: #ffffff;
-  letter-spacing: 0;
+  letter-spacing: 0.015em;
   background: none;
   -webkit-text-stroke: 0;
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18),
-    0 8px 18px rgba(1, 18, 56, 0.28);
+    0 10px 24px rgba(1, 18, 56, 0.24);
+}
+
+.brand-submark {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .brand-logo-tile {
@@ -270,6 +294,17 @@ svg {
 @media (max-width: 640px) {
   .brand-mark {
     font-size: clamp(1.45rem, 8vw, 2.15rem);
+  }
+
+  .brand-lockup {
+    gap: 0.35rem;
+  }
+
+  .brand-submark {
+    min-height: 1.8rem;
+    padding: 0.32rem 0.7rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
   }
 
   .brand-logo-tile {

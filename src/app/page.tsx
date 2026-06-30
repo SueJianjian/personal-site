@@ -336,13 +336,13 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div>
+              <div className="brand-lockup">
                 <p className="brand-mark" aria-label={siteContent.brand.title}>
-                  <span className="brand-mark__text" data-text={siteContent.brand.title}>
+                  <span className="brand-mark__text">
                     {siteContent.brand.title}
                   </span>
                 </p>
-                <p className="mt-1 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
+                <p className="brand-submark">{siteContent.brand.slogan}</p>
               </div>
             </div>
             <nav className="hidden items-center gap-10 pt-2 text-lg font-medium lg:flex">
