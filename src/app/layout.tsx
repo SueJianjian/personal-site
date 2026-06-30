@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://www.xiaosuzi1987.cc.cd";
+const siteUrl = "https://www.jcfuyunge.cc.cd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
