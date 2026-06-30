@@ -33,7 +33,7 @@ export default function OpenGraphImage() {
             opacity: 0.92,
           }}
         >
-          浮云阁
+          晋城浮云阁工作室
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -72,8 +72,8 @@ export default function OpenGraphImage() {
             color: "rgba(255,255,255,0.82)",
           }}
         >
-          <div style={{ display: "flex" }}>微信：suxiaojian0828</div>
-          <div style={{ display: "flex" }}>邮箱：xiaosuzi1987@gmail.com</div>
+          <div style={{ display: "flex" }}>微信：JCFuYunGe</div>
+          <div style={{ display: "flex" }}>邮箱：jcfuyunge@163.com</div>
         </div>
       </div>
     ),

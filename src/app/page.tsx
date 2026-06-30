@@ -72,7 +72,7 @@ const supportPlans: SupportPlan[] = [
 
 const siteContent = {
   brand: {
-    title: "浮云阁",
+    title: "晋城浮云阁工作室",
     slogan: "企业官网 / 展示页制作",
   },
   hero: {
@@ -92,15 +92,15 @@ const siteContent = {
   contact: {
     title: "直接联系我",
     lead: "想做企业官网、展示页或服务介绍页，可以直接加我微信、发邮件，或者把参考网站发给我。",
-    email: "xiaosuzi1987@gmail.com",
+    email: "jcfuyunge@163.com",
     contacts: [
-      { label: "微信", value: "suxiaojian0828" },
+      { label: "微信", value: "JCFuYunGe" },
       { label: "电话", value: "18035638273", href: "tel:18035638273" },
-      { label: "抖音", value: "29919058295" },
+      { label: "抖音", value: "66466905135" },
       {
         label: "邮箱",
-        value: "xiaosuzi1987@gmail.com",
-        href: "mailto:xiaosuzi1987@gmail.com",
+        value: "jcfuyunge@163.com",
+        href: "mailto:jcfuyunge@163.com",
       },
     ] satisfies ContactItem[],
     primary: "发邮件咨询",
@@ -364,8 +364,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 pb-14 pt-6 sm:px-10 lg:px-12 lg:pb-20">
           <header className="flex items-start justify-between gap-6 text-white">
             <div>
-              <p className="text-3xl font-extrabold tracking-tight">{siteContent.brand.title}</p>
-              <p className="mt-2 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
+              <p className="brand-mark" aria-label={siteContent.brand.title}>
+                <span className="brand-mark__text" data-text={siteContent.brand.title}>
+                  {siteContent.brand.title}
+                </span>
+              </p>
+              <p className="mt-1 text-sm font-medium text-white/85">{siteContent.brand.slogan}</p>
             </div>
             <nav className="hidden items-center gap-10 pt-2 text-lg font-medium lg:flex">
               {["首页", "服务内容", "适合行业", "制作流程", "成交页展示", "联系我们"].map(
@@ -641,7 +645,7 @@ export default function Home() {
               <div className="overflow-hidden rounded-[1.5rem] border border-[#dbe8ff] bg-white shadow-[0_12px_30px_rgba(43,94,184,0.08)]">
                 <Image
                   src="/wechat-qr.jpg"
-                  alt="浮云阁微信二维码"
+                  alt="晋城浮云阁工作室微信二维码"
                   width={220}
                   height={220}
                   className="h-56 w-56 object-cover"
@@ -650,7 +654,7 @@ export default function Home() {
               </div>
               <div className="space-y-3">
                 <p className="text-sm uppercase tracking-[0.2em] text-[#6d7f95]">微信号</p>
-                <p className="text-2xl font-semibold text-[#182233]">suxiaojian0828</p>
+                <p className="text-2xl font-semibold text-[#182233]">JCFuYunGe</p>
                 <p className="text-base leading-7 text-[#607085]">
                   扫码添加微信，方便直接发需求、文案和参考网站。
                 </p>
@@ -692,7 +696,7 @@ export default function Home() {
                   {siteContent.contact.lead}
                 </p>
                 <p className="mt-4 text-lg text-white/88">
-                  微信：suxiaojian0828 / 电话：18035638273 / 抖音：29919058295
+                  微信：JCFuYunGe / 电话：18035638273 / 抖音：66466905135
                 </p>
                 <p className="mt-2 text-lg text-white/88">{siteContent.contact.email}</p>
               </div>
