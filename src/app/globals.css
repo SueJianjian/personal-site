@@ -93,6 +93,7 @@ body::selection {
 .cta-button {
   display: inline-flex;
   min-height: 4rem;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -122,6 +123,12 @@ body::selection {
 .cta-button:focus-visible {
   outline: 3px solid rgba(255, 255, 255, 0.82);
   outline-offset: 4px;
+}
+
+#cases,
+#contact,
+#wechat {
+  scroll-margin-top: 6rem;
 }
 
 .cta-button-primary {

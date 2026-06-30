@@ -322,7 +322,7 @@ export default function Home() {
       <section className="hero-section relative overflow-hidden">
         <div className="hero-blur hero-blur-left" />
         <div className="hero-blur hero-blur-right" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:120px_120px] opacity-20" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:120px_120px] opacity-20" />
         <div className="mx-auto max-w-7xl px-6 pb-14 pt-6 sm:px-10 lg:px-12 lg:pb-20">
           <header className="flex items-start justify-between gap-6 text-white">
             <div className="flex items-center gap-4">
